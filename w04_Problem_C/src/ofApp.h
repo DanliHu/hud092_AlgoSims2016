@@ -25,5 +25,5 @@ class ofApp : public ofBaseApp{
     ofImage img;
     vector<ofColor> color;
     vector<Particle> particles;
-    int thereshold = 220, loc;
+    int thereshold = 180, loc;
 };

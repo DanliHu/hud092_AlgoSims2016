@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     ofBackground(0);
-    img.loadImage("Phoenix2.jpg");
+    img.loadImage("Phoenix1.jpg");
     
     for (int x=0; x<ofGetWidth(); x++) {
         for (int y=0; y<ofGetHeight(); y++) {
@@ -30,6 +30,8 @@ void ofApp::draw(){
         for (int y=0; y<ofGetHeight(); y++) {
             
             loc = x + y * ofGetWidth();
+            
+            float sat = color[loc].getSaturation();
         
             if(color[loc].getBrightness() > thereshold){
             particles[loc].draw(color[loc]);

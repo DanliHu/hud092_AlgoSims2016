@@ -30,7 +30,7 @@ void Particle::update(){
     pos += vel;
 //    alpha -= ofRandom(10);
     
-    float randomNum = ofGetHeight() - 50 + ofRandom(20);
+    float randomNum = ofGetHeight() - 10 + ofRandom(20);
     
     if(pos.y > randomNum){
         pos.y = randomNum;
@@ -38,7 +38,7 @@ void Particle::update(){
 }
 
 void Particle::draw(ofColor _color){
-    ofSetColor(_color,alpha);
+    ofSetColor(_color);
     ofDrawCircle(pos, 1);
 }
 
