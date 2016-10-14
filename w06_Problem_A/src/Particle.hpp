@@ -1,0 +1,41 @@
+//
+//  Particle.hpp
+//  w06_Problem_A
+//
+//  Created by Danli Hu on 10/14/16.
+//
+//
+
+#pragma once
+
+#include "ofMain.h"
+
+class Particle {
+public:
+    Particle();
+    
+    void setInit(ofPoint _pos, ofPoint _vel = ofPoint(0,0));
+    
+    ofPoint getPosition();
+    float   getRadius();
+    
+    void addForce(ofPoint _force);
+    
+    void addRepulsionForce(ofPoint _pos, float _rad, float _scale);
+    void addAttractionForce(ofPoint _pos, float _rad, float _scale);
+    
+    void seek( ofPoint dest );
+    
+    void update();
+    void draw();
+    
+    ofColor color;
+    
+private:
+    ofPoint pos;
+    ofPoint vel;
+    ofPoint acc;
+    
+    float radius;
+    float damp;
+};
