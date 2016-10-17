@@ -2,17 +2,23 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+    ofBackground(255);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    for (int i=0; i<vehicles.size(); i++) {
+        vehicles[i].applyforce(vehicles[i].seek(vehicles[i].follow(path)));
+        vehicles[i].update();
+    }
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+    path.display();
+    for (int i=0; i<vehicles.size(); i++) {
+        vehicles[i].draw();
+    }
 }
 
 //--------------------------------------------------------------
@@ -37,6 +43,9 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
+    Vehicle temp;
+    temp.setup(x, y);
+    vehicles.push_back(temp);
 
 }
 
