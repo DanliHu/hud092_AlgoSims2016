@@ -15,12 +15,12 @@ public:
     Particle();
     
     void setup(float _x, float _y);
-    void update();
+    void update(Particle *_particles);
     
-    void draw(ofColor _color);
+    void draw(Particle *_particles, ofColor *_color);
     void restart(float _x, float _y);
     
-    ofPoint pos, vel;
+    ofPoint *pos, *vel, *originPos;
     ofColor color;
     
     float alpha, damping;
