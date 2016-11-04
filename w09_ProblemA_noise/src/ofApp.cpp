@@ -62,18 +62,13 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    cout << offset <<endl;
-    
-}
-
-//--------------------------------------------------------------
-void ofApp::draw(){
     
     yOff = 0;
     
     for (int i = 0; i < table.size(); i++) {
         xOff = 0;
         for (int j = 0; j < table[i].size(); j++) {
+            
             table[i][j].update(ofNoise(xOff-offset/2,yOff)*1.5*resolution);
             table2[i][j].update(ofNoise(yOff,xOff+offset/2)*resolution);
             
@@ -82,13 +77,19 @@ void ofApp::draw(){
         yOff += 0.01;
     }
     
+    
+    cout << offset <<endl;
+}
+
+//--------------------------------------------------------------
+void ofApp::draw(){
+    
+
     for (int i = 1; i < cols; i++) {
         for (int j = 1; j < rows; j++) {
 
             table[i][j].draw(colors[i][j]);
             table2[i][j].draw(colors2[i][j]);
-            
-
         }
     }
 
